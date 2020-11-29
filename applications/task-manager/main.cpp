@@ -31,9 +31,9 @@ public:
         auto toolbar = toolbar_create(root());
         new Button(toolbar, BUTTON_FILLED, Icon::get("plus"), "New task");
 
-        auto cancel_task_button = new Button(toolbar, BUTTON_TEXT, Icon::get("close"), "Cancel task");
+        auto cancel_task_button = new Button(toolbar, BUTTON_TEXT, Icon::get("close"), "Kill task");
         cancel_task_button->on(Event::ACTION, [&](auto) {
-            if (dialog_message(Icon::get("close"), "Cancel task", "Are you sure about that ?", DIALOG_BUTTON_YES | DIALOG_BUTTON_NO) == DIALOG_BUTTON_YES)
+            if (dialog_message(Icon::get("close"), "Kill task", "Are you sure about that ?", DIALOG_BUTTON_YES | DIALOG_BUTTON_NO) == DIALOG_BUTTON_YES)
             {
                 _table_model->kill_task(_table->selected());
             };
@@ -45,7 +45,7 @@ public:
         _table = new Table(root(), _table_model);
         _table->attributes(LAYOUT_FILL);
 
-        _table_timer = own<Timer>(1000, [&]() {
+        _table_timer = own<Timer>(100, [&]() {
             _table_model->update();
         });
 
