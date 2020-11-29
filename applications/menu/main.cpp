@@ -7,6 +7,7 @@
 #include <libwidget/Application.h>
 #include <libwidget/Screen.h>
 #include <libwidget/Widgets.h>
+#include <abi/Syscalls.h>
 
 struct MenuEntry
 {
@@ -167,7 +168,12 @@ int main(int argc, char **argv)
         process_run("settings", nullptr);
     });
 
-    new Button(bottom_container, BUTTON_TEXT, Icon::get("power-standby"));
+    auto poweroff_button = new Button(bottom_container, BUTTON_TEXT, Icon::get("power-standby"));
+
+    poweroff_button->on(EventType::ACTION, [&](auto){
+        hj_system_shutdown();
+    });
+
 
     new Separator(window->root());
 

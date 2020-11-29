@@ -33,7 +33,7 @@ public:
 
         auto cancel_task_button = new Button(toolbar, BUTTON_TEXT, Icon::get("close"), "Kill task");
         cancel_task_button->on(Event::ACTION, [&](auto) {
-            if (dialog_message(Icon::get("close"), "Kill task", "Are you sure about that ?", DIALOG_BUTTON_YES | DIALOG_BUTTON_NO) == DIALOG_BUTTON_YES)
+            if (dialog_message(Icon::get("close"), "Kill task", "Really kill selected process?", DIALOG_BUTTON_YES | DIALOG_BUTTON_NO) == DIALOG_BUTTON_YES)
             {
                 _table_model->kill_task(_table->selected());
             };

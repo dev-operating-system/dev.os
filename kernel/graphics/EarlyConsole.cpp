@@ -7,7 +7,7 @@
 int _console_x = 0;
 int _console_y = 0;
 bool _console_escaped = false;
-bool _console_enabled = true;
+bool _console_enabled = false;
 
 int early_console_width()
 {
