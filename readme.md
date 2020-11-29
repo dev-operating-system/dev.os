@@ -1,4 +1,4 @@
-
+<!--
 ![Banner](manual/header.png)
 
 <p align="center">
@@ -66,3 +66,9 @@ skiftOS running in QEMU 5.1
 The skift operating system and its core components are licensed under the **MIT License**.
 
 See [license.md](license.md)
+
+-->
+
+# dev.os
+- **dev.os** is **simple** operating system
+- <img src="icons/alert-box.svg" /> **dev.os** is not ready to production
