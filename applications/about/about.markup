@@ -1,0 +1,25 @@
+<Window
+    title="About"
+    icon="information"
+    width="280"
+    height="280"
+    layout="vflow(8)"
+    padding="insets(6)"
+    >
+
+    <Container layout="vflow(4)" fill>
+        <Image id="system-image" fill/>
+
+        <Label text="The skift operating system." position="center"/>
+        <Label id="version-label" position="center"/>
+        <Label id="commit-label" position="center"/>
+        <Label text="Copyright © 2018-2020" position="center"/>
+        <Label text="N. Van Bossuyt & contributors." position="center"/>
+    </Container>
+
+    <Container layout="hflow(0)">
+        <Button id="license-button" text="License" outlined/>
+        <Container fill/>
+        <Button id="ok-button" text="Ok" filled/>
+    </Container>
+</Window>
